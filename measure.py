@@ -49,16 +49,16 @@ class GUI(tk.Frame):
             self.c.coords(self.current, *self.start, event.x, event.y)
 
     def on_release(self, event):
-        self.c.coords(self.current, *self.start, event.x, event.y)
+        self.on_motion(event)
         length = int(((self.start[0]-event.x)**2  + (self.start[1]-event.y)**2)**0.5)
         data = map(str, self.start+(event.x, event.y,length))
         self.output.insert(tk.END,','.join(data)+'\n')
-        self.c.coords(self.current, *self.start, event.x, event.y)
         self.current = None
 
     def clear(self):
         self.output.delete(0.0, tk.END)
         self.output.insert(0.0,'X0,Y0,X1,Y1,length\n')
+        self.filename_lbl.config(text='')
         while self.refs:
             self.c.delete(self.refs.pop())
 
