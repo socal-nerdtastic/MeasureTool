@@ -1,12 +1,8 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-#
-#   Documentation is like sex.
-#   When it's good, it's very good.
-#   When it's bad, it's better than nothing.
-#   When it lies to you, it may be a while before you realize something's wrong.
 #
 # TODO: Add scroll bars or zoom to image view for large images.
+# TODO: add dialog when load fails
+# TODO: add support for other image formats
 
 import tkinter as tk
 from tkinter.filedialog import askopenfilename
